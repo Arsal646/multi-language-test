@@ -1,14 +1,13 @@
 {
   "name": "multi-language-test",
   "version": "0.0.0",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "serve:ssr:multi-language-test": "node dist/multi-language-test/server/server.mjs"
-  },
+"scripts": {
+  "build:client-and-server-bundles": "ng build --localize && ng run multi-language-test:server",
+  "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
+  "compile:server": "tsc -p tsconfig.server.json",
+  "serve:ssr": "node dist/multi-language-test/server/main.js"
+},
+
   "private": true,
   "dependencies": {
     "@angular/common": "^20.0.0",
