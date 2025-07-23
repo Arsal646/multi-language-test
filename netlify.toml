@@ -1,13 +1,48 @@
 [build]
-  command = "ng build"
-  publish = "dist/multi-language-test"
+  publish = "dist"
+  command = "ng build --localizr"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Disable Angular runtime plugin for i18n apps
+[[plugins]]
+  package = "@netlify/angular-runtime"
+  [plugins.inputs]
+    disable = true
 
 [[redirects]]
+  # Handle Arabic routes first (more specific)
   from = "/ar/*"
   to = "/ar/index.html"
   status = 200
 
 [[redirects]]
+  # Handle root and all other routes for English SPA
   from = "/*"
   to = "/index.html"
   status = 200
+
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
