@@ -4,18 +4,26 @@
   "newProjectRoot": "projects",
   "projects": {
     "multi-language-test": {
+        "i18n": {
+        "sourceLocale": "en-US",
+  "locales": {
+    "ar-AE": "src/locale/messages.ar.xlf"
+  }
+      },
       "projectType": "application",
       "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
+        
         "build": {
           "builder": "@angular/build:application",
           "options": {
             "browser": "src/main.ts",
             "polyfills": [
-              "zone.js"
+              "zone.js",
+              "@angular/localize/init"
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
@@ -53,9 +61,18 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
-            }
+            },
+              "ar-AE": {
+              "localize": ["ar-AE"],
+              "outputPath": "dist/multi-language-test/ar"
+            },
+            "en-US": {
+            "localize": ["en-US"],
+            "outputPath": "dist/multi-language-test/en"
+          }
           },
           "defaultConfiguration": "production"
+          
         },
         "serve": {
           "builder": "@angular/build:dev-server",
@@ -65,7 +82,13 @@
             },
             "development": {
               "buildTarget": "multi-language-test:build:development"
-            }
+            },
+             "ar-AE": {
+      "buildTarget": "multi-language-test:build:ar-AE"
+    },
+    "en-US": {
+  "buildTarget": "multi-language-test:build:en-US"
+}
           },
           "defaultConfiguration": "development"
         },
@@ -77,7 +100,8 @@
           "options": {
             "polyfills": [
               "zone.js",
-              "zone.js/testing"
+              "zone.js/testing",
+              "@angular/localize/init"
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
@@ -93,5 +117,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "36bf3611-f148-437b-b256-e600c9344170"
   }
 }

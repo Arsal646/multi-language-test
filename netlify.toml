@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build:netlify"
+  publish = "dist/multi-language-test/final"
+
+[[redirects]]
+  from = "/ar/*"
+  to = "/ar/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
