@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build:ssr"
+  command = "ng build"
   publish = "dist/multi-language-test/browser"
 
 [[redirects]]
