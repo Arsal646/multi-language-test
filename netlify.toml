@@ -1,14 +1,23 @@
 [build]
-  publish = "netlify-dist"
   command = "npm run build"
+  publish = "netlify-dist"
 
-  
+[plugins]
+  # Disable automatic plugin detection
+  package = ""
+
 [[redirects]]
-  from = "/ar/*"
-  to = "/ar/index.html"
+  from = "/"
+  to = "/en/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/*"
+  to = "/en/index.html"
   status = 200
 
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from = "/ar-AE/*"
+  to = "/ar-AE/index.html"
   status = 200
