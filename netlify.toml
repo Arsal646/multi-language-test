@@ -1,6 +1,6 @@
 [build]
   command = "ng build"
-  publish = "dist/multi-language-test/browser"
+  publish = "dist/multi-language-test"
 
 [[redirects]]
   from = "/ar/*"
