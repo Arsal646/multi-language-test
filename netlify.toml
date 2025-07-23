@@ -1,6 +1,6 @@
 [build]
   command = "npm run build:netlify"
-  publish = "dist/multi-language-test/final"
+  publish = "dist/multi-language-test/browser"
 
 [[redirects]]
   from = "/ar/*"
