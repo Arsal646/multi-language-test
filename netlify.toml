@@ -1,3 +1,3 @@
 [build]
-  command = "ng build"
-  publish = "dist/multi-language-test/browser"
+  command = "ng build --configuration production"
+  publish = "dist/multi-language-test/browser/ar"
