@@ -1,3 +1,19 @@
 [build]
-  command = "ng build --configuration production"
-  publish = "dist/multi-language-test/browser/en-US"
+  command = "npm run build"
+  publish = "netlify-dist"
+
+[[redirects]]
+  from = "/"
+  to = "/en-US/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en-US/*"
+  to = "/en-US/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/ar-AE/*"
+  to = "/ar-AE/index.html"
+  status = 200

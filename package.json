@@ -3,8 +3,7 @@
   "version": "0.0.0",
 "scripts": {
   "build": "ng build --localize",
-  "postbuild": "npm run copy-locale-folders",
-  "copy-locale-folders": "rm -rf netlify-dist && mkdir -p netlify-dist/en netlify-dist/ar-AE && cp -r dist/your-app-name/browser/en/* netlify-dist/en/ && cp -r dist/your-app-name/browser/ar-AE/* netlify-dist/ar-AE/ && cp _redirects netlify-dist/"
+  "postbuild": "node netlify-copy.js"
 },
 
   "private": true,
