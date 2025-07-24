@@ -4,11 +4,11 @@
   "newProjectRoot": "projects",
   "projects": {
     "multi-language-test": {
-        "i18n": {
+      "i18n": {
         "sourceLocale": "en-US",
-  "locales": {
-    "ar-AE": "src/locale/messages.ar.xlf"
-  }
+        "locales": {
+          "ar-AE": "src/locale/messages.ar.xlf"
+        }
       },
       "projectType": "application",
       "schematics": {},
@@ -16,7 +16,6 @@
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
-        
         "build": {
           "builder": "@angular/build:application",
           "options": {
@@ -43,6 +42,7 @@
           },
           "configurations": {
             "production": {
+              "localize": ["en-US"],
               "budgets": [
                 {
                   "type": "initial",
@@ -62,17 +62,12 @@
               "extractLicenses": false,
               "sourceMap": true
             },
-              "ar-AE": {
+            "ar-AE": {
               "localize": ["ar-AE"],
               "outputPath": "dist/multi-language-test/ar"
-            },
-            "en-US": {
-            "localize": ["en-US"],
-            "outputPath": "dist/multi-language-test/en"
-          }
+            }
           },
           "defaultConfiguration": "production"
-          
         },
         "serve": {
           "builder": "@angular/build:dev-server",
@@ -83,12 +78,9 @@
             "development": {
               "buildTarget": "multi-language-test:build:development"
             },
-             "ar-AE": {
-      "buildTarget": "multi-language-test:build:ar-AE"
-    },
-    "en-US": {
-  "buildTarget": "multi-language-test:build:en-US"
-}
+            "ar-AE": {
+              "buildTarget": "multi-language-test:build:ar-AE"
+            }
           },
           "defaultConfiguration": "development"
         },
