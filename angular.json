@@ -5,15 +5,9 @@
   "projects": {
     "multi-language-test": {
       "i18n": {
-        "sourceLocale": {
-          "code": "en",
-          "baseHref": "/en/"
-        },
+        "sourceLocale": "en-US",
         "locales": {
-          "ar": {
-            "translation": "src/locale/messages.ar.xlf",
-            "baseHref": "/ar/"
-          }
+          "ar-AE": "src/locale/messages.ar.xlf"
         }
       },
       "projectType": "application",
@@ -61,8 +55,7 @@
                 }
               ],
               "outputHashing": "all",
-              "localize": ["en", "ar"]
-
+              "localize": ["en-US","ar-AE"]
             },
             "development": {
               "optimization": false,
