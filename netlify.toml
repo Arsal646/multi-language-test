@@ -1,13 +1,3 @@
 [build]
   command = "ng build"
   publish = "dist/multi-language-test/browser"
-
-[[redirects]]
-  from = "/ar/*"
-  to = "/ar/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
