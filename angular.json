@@ -5,9 +5,9 @@
   "projects": {
     "multi-language-test": {
       "i18n": {
-        "sourceLocale": "en",
+        "sourceLocale": "en-US",
         "locales": {
-          "ar": "src/locale/messages.ar.xlf"
+          "ar-AE": "src/locale/messages.ar.xlf"
         }
       },
       "projectType": "application",
@@ -54,14 +54,24 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all",
-              "localize": ["en", "ar"]
-
+              "outputHashing": "all"
             },
             "development": {
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "ar-AE": {
+              "localize": [
+                "ar-AE"
+              ],
+              "outputPath": "dist/multi-language-test/ar"
+            },
+            "en-US": {
+              "localize": [
+                "en-US"
+              ],
+              "outputPath": "dist/multi-language-test/en"
             }
           },
           "defaultConfiguration": "production"
@@ -77,6 +87,9 @@
             },
             "ar-AE": {
               "buildTarget": "multi-language-test:build:ar-AE"
+            },
+            "en-US": {
+              "buildTarget": "multi-language-test:build:en-US"
             }
           },
           "defaultConfiguration": "development"
