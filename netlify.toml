@@ -1,23 +1,13 @@
 [build]
-  command = "npm run build"
-  publish = "netlify-dist"
-
-[plugins]
-  # Disable automatic plugin detection
-  package = ""
+  command = "ng build --configuration production"
+  publish = "dist/browser/en"
 
 [[redirects]]
-  from = "/"
-  to = "/en/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/en/*"
-  to = "/en/index.html"
+  from = "/ar/*"
+  to = "/ar/index.html"
   status = 200
 
 [[redirects]]
-  from = "/ar-AE/*"
-  to = "/ar-AE/index.html"
+  from = "/*"
+  to = "/index.html"
   status = 200
